@@ -3,7 +3,7 @@ import './App.css';
 import SoloCard from './components/SoloCard';
 
 // 6 different cards with src to picture
-const cardImages = [
+const cardPics = [
   {"src": "/img/falesand-2.jpg" , matched: false},
   {"src": "/img/taupou.jpg" , matched: false},
   {"src": "/img/manaia.jpg" , matched: false},
@@ -13,8 +13,8 @@ const cardImages = [
 ]
 function App() {
   const [cards, setCards] = useState([])
-  // how many turns a user takes to complete the game
-  const [turns, setTurns] = useState(0)
+  // how many trys a user takes to complete the game
+  const [trys, setTrys] = useState(0)
   const [choiceUno, setChoiceUno] = useState(null)
   const [choiceDos, setChoiceDos] = useState(null)
   const [disabled, setDisabled] = useState(false)
@@ -22,7 +22,7 @@ function App() {
   // shuffle cards
   const shuffleCards = () => {
     // duplicate the arrays using spread operator, total of 12 (2 of each pics)
-    const shuffledCards = [...cardImages, ...cardImages]
+    const shuffledCards = [...cardPics, ...cardPics]
       // fire a function for each item in the array to see if they match
         .sort(() => Math.random() - 0.5)
       // add on an id property to each item
@@ -31,7 +31,7 @@ function App() {
         setChoiceUno(null)
         setChoiceDos(null)
         setCards(shuffledCards)
-        setTurns(0)
+        setTrys(0)
   }
 
   // compare 2 selected cards
@@ -43,7 +43,7 @@ function App() {
       if(choiceUno.src === choiceDos.src){
         // we take the prev cards state to update the state
         setCards(prevCards => {
-        // returning a new array of cards using map, returns a new array based on the attached array
+        // returning a new array of cards using map, retrys a new array based on the attached array
           return prevCards.map(card => {
             // if they match
             if(card.src === choiceUno.src){
@@ -67,7 +67,7 @@ function App() {
   const resetTurn = () => {
     setChoiceUno(null)
     setChoiceDos(null)
-    setTurns(prevTurns => prevTurns + 1)
+    setTrys(prevtrys => prevtrys + 1)
     setDisabled(false)
   }
 
@@ -84,7 +84,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h2>Culture Match</h2>
+      <h2>Pacific Islander 🌴 Culture Match</h2>
       <button onClick={shuffleCards}>New Game</button>
 
       <div className="card-grid">
@@ -99,7 +99,7 @@ function App() {
       />
     ))}
   </div>
-  <p>Turns: {turns} </p>
+  <p>Trys: {trys} </p>
     </div>
   );
 }
