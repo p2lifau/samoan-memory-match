@@ -1,5 +1,5 @@
 
-## Culture Match [Link to Live Site](https://samoan-culture-react-matchgame.netlify.app/)
+## 🌴 Culture Match [Link to Live Site](https://samoan-culture-react-matchgame.netlify.app/)
 
  Culture Match is a memory match game in which I used React.js & CSS. The theme of the game highlights my Samoan culture with the cards displaying significant aspects of the culture. Pacific Islander representation in the tech space is minimal and I hope that I can be an inspiration to my people to pursue tech and show them that it is possible. 
 
