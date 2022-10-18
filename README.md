@@ -7,3 +7,4 @@
 
 <img width="1380" alt="culture-match" src="https://user-images.githubusercontent.com/65685909/196536097-7b8e1bdf-d3b6-4342-8f2e-276b0fb59024.png">
 
+<img width="1127" alt="Screen Shot 2022-10-18 at 1 23 46 PM" src="https://user-images.githubusercontent.com/65685909/196536387-991dd955-8a0b-479c-a24b-16ecb759fe1c.png">
