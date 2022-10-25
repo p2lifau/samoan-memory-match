@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react';
 import './App.css';
+import Instructions from './components/Instructions';
 import SoloCard from './components/SoloCard';
 
 // 6 different cards with src to picture
@@ -100,7 +101,9 @@ function App() {
     ))}
   </div>
   <p>Trys: {trys} </p>
+  <Instructions />
     </div>
+    
   );
 }
 
