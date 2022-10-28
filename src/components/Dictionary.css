@@ -1,0 +1,30 @@
+.dictionary-cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 2em 0;
+  grid-gap: 1.5rem;
+  justify-content: space-around;
+  color: black;
+}
+
+.dictionary-cards img {
+  height: 400px;
+  width: 400px;
+}
+
+.dictionary-cards h2 {
+  color: #333;
+}
+.card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5,
+.card-6 {
+  background: #fff;
+  padding: 30px 20px 100px 20px;
+  /* max-width: 18em; */
+  margin-top: 1em;
+  border: 0.5px solid #333;
+  box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+}

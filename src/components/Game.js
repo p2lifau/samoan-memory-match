@@ -1,27 +1,22 @@
-import { useState, useEffect} from 'react';
-import './App.css';
-import Dictionary from './components/Dictionary';
-import Instructions from './components/Instructions';
-import SoloCard from './components/SoloCard';
+import React from 'react'
+import { useState , useEffect} from 'react'
 
-// 6 different cards with src to picture
+
 const cardPics = [
-  {"src": "/img/falesand-2.jpg" , matched: false},
-  {"src": "/img/taupou.jpg" , matched: false},
-  {"src": "/img/manaia.jpg" , matched: false},
-  {"src": "/img/sandula.jpg" , matched: false},
-  {"src": "/img/siva-afi.jpg" , matched: false},
-  {"src": "/img/samoa-map.png" , matched: false}
-]
-function App() {
+    {"src": "/img/falesand-2.jpg" , matched: false},
+    {"src": "/img/taupou.jpg" , matched: false},
+    {"src": "/img/manaia.jpg" , matched: false},
+    {"src": "/img/sandula.jpg" , matched: false},
+    {"src": "/img/siva-afi.jpg" , matched: false},
+    {"src": "/img/samoa-map.png" , matched: false}
+  ]
+
   const [cards, setCards] = useState([])
   // how many trys a user takes to complete the game
   const [trys, setTrys] = useState(0)
   const [choiceUno, setChoiceUno] = useState(null)
   const [choiceDos, setChoiceDos] = useState(null)
   const [disabled, setDisabled] = useState(false)
-
-  // shuffle cards
   const shuffleCards = () => {
     // duplicate the arrays using spread operator, total of 12 (2 of each pics)
     const shuffledCards = [...cardPics, ...cardPics]
@@ -35,9 +30,8 @@ function App() {
         setCards(shuffledCards)
         setTrys(0)
   }
-
-  // compare 2 selected cards
-  useEffect (() => {
+   // compare 2 selected cards
+   useEffect (() => {
     
     if(choiceUno && choiceDos){
       setDisabled(true)
@@ -84,34 +78,9 @@ function App() {
     // if choice1 is true 
     choiceUno ? setChoiceDos(card) : setChoiceUno(card)
   }
+
+export default function Game() {
   return (
-    
-    <div className="App">
-     
-      <h2>Culture Match</h2>
-      <button onClick={shuffleCards}>New Game</button>
-
-      <div className="card-grid">
-    {cards.map(card => (
-      // add card prop to access the card obj in single card comp
-      <SoloCard 
-      key = {card.id} 
-      card={card}
-      handleChoice = {handleChoice}
-      flipped = {card === choiceUno || card === choiceDos || card.matched}
-      disabled = {disabled}
-      />
-    ))}
-  </div>
-  <p id='try'>Trys: {trys} </p>
-  <Instructions />
-  
-  <Dictionary/>
-
-  
-    </div>
-    
-  );
+    <div>Game</div>
+  )
 }
-
-export default App;
