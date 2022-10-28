@@ -88,7 +88,7 @@ function App() {
     
     <div className="App">
      
-      <h2>Culture Match</h2>
+      <h2>Pacific Islander🌴Culture Match</h2>
       <button onClick={shuffleCards}>New Game</button>
 
       <div className="card-grid">
